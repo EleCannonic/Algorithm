@@ -7,27 +7,39 @@ first $k$ axis to represent the entire system.
 
 ## Steps:
 original data $X$
+
 $$X = \begin{pmatrix} 
 \vec x_{1} & \vec x_{2} & \cdots & \vec x_{p}
 \end{pmatrix}$$
+
 ### Target: 
 Find new indices 
+
 $$Z = \begin{pmatrix} \vec z_{1} & \vec z_{2} & \cdots & \vec z_{p}\end{pmatrix}$$
+
 satisfying condition of 
+
 $$\sigma_1^2>\sigma_2^2>\cdots>\sigma_p^2$$
 
 where $z_n$ is called the $n^{th}$ principal component.
 
 ### step1: standardization
-- calculate mean value of each column: 
+- calculate mean value of each column:
+  
 $$\bar x_j = \displaystyle\sum_{i=1}^nx_{ij}$$
-- calculate standard deviation: 
+
+- calculate standard deviation:
+  
 $$\sigma_j = \sqrt{\dfrac{\displaystyle\sum_{i=1}^n (x_{ij} - \bar x_{j})}{n-1}}$$
+
 - standardization:
+  
 $$X_{ij} = \dfrac{x_{ij} - \bar x_{j}}{\sigma_j}$$
 
 ### step2: covariance matrix
+
 $$r_{ij} = \dfrac{1}{n-1}\sum_{k=1}^n (X_{ki} - \bar X_i)(X_{kj} - \bar X_j)$$
+
 $$R = \begin{pmatrix}
 r_{11} & r_{12} & \cdots & r_{1p}\\
 r_{21} & r_{22} & \cdots & r_{2p}\\
@@ -39,7 +51,14 @@ r_{n1} & r_{n2} & \cdots & r_{np}\\
 Suppose $R$ has eigenvalues $\lambda_1>\lambda_2>\cdots>\lambda_p$, corresponding
 eigenvectors $\vec a_1, \vec a_2, \cdots, \vec a_p$
 
-$$\vec a_{i} = \begin{pmatrix}a_{1i}\\a_{2i}\\\vdots\\a_{pi} \end{pmatrix}$$
+$$\vec a_{i} = \begin{pmatrix}a_{1i}
+\\
+a_{2i}
+\\
+\vdots
+\\
+a_{pi}
+\end{pmatrix}$$
 
 **Notice: necessary to sort the eigenvalues**
 
@@ -53,14 +72,18 @@ Meaning of accumulated contribution rate:
 |:---:|:---:|:---:|:---:|
 |$\alpha_1$|$\alpha_1+\alpha_2$|$\alpha_1+\alpha_2+\alpha_3$|$\cdots$|
 
-Take when $\alpha_1+\alpha_2+\alpha_3>80\%$
+Take when $\alpha_1+\alpha_2+\alpha_3>0.8$
 
 ### step4: find principal components
+
 $$\vec z_i = \sum_{k=1}^pa_{ki}\vec X_k$$
 
 Larger coefficient of $X_k$ means more information carried by $X_k$.
 
-In fact if define $A = \begin{pmatrix} \vec a_{1} & \vec a_{2} & \cdots & \vec a_{p}\end{pmatrix}$, 
+In fact if define
+
+$$A = \begin{pmatrix} \vec a_{1} & \vec a_{2} & \cdots & \vec a_{p}\end{pmatrix}$$
+
 then $Z = XA$.
 
 After step4, select components with accumulated contribution rate > 80% to analyse.
