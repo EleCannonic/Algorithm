@@ -11,9 +11,9 @@ end
 
 % prevent error on non-square
 [r_x, c_x] = size(x);
-if r_x ~= c_x
+if r_x ~= c_x && method == "ED"
     method = "SVD";
-    warning("ED can't work for non-square matrix. Method switched to SVD");
+    warning("Non-square matrix. Method switched to SVD.");
 end
 
 % standardization
@@ -35,7 +35,7 @@ elseif method == "SVD"
     [~, S, V] = svd(X);
 
     % sort eigenvalues
-    eig_value = sqrt(diag(S));
+    eig_value = sqrt(diag(S)).^2;
     [eig_value, idx] = sort(eig_value, "descend");
 
     V = V(:, idx);
