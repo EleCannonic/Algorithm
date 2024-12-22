@@ -4,6 +4,11 @@ function Z = pca(x, threshold, method)
 % method: method taken, ED(eigenvalue decomposition) or SVD(singular value
 %         decomposition), optional
 
+% default method
+if nargin < 3
+    method = "SVD";
+end
+
 % prevent error on non-square
 [r_x, c_x] = size(x);
 if r_x ~= c_x
