@@ -7,7 +7,7 @@ This repository contains a collection of common algorithms with their mathematic
 We update this project non-scheduled. 
 
 # Content
-- Principal Component Analysis (PCA), MATLAB
+- Principal Component Analysis (PCA), MATLAB & Python
 
 # How to Use
 All codes in this repository are all packaged functions or classes. For each algorithms we provided a simple test example in the end of the description markdown document, along with their output results. These examples may help you to have a brief impress of the output and check if your data produces a correct result.
