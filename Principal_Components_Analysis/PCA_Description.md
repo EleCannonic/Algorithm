@@ -229,3 +229,60 @@ Z = 6×4
 
 Elapsed time is 0.004191 seconds.
 ```
+
+## Test in Python
+```py
+import time
+import numpy as np
+from pca import pca
+
+X = np.array([
+    [2.5, 3.1, 1.2, 0.7, 4.5, 3.3],
+    [3.5, 4.2, 1.8, 1.1, 5.1, 4.0],
+    [2.8, 3.6, 1.5, 0.9, 4.8, 3.7],
+    [3.2, 4.0, 1.7, 1.0, 5.0, 3.9],
+    [2.9, 3.4, 1.3, 0.8, 4.6, 3.5],
+    [3.0, 3.8, 1.6, 0.9, 4.9, 3.8]
+])
+
+# ED test
+start_time_ed = time.time()
+
+Z_ed = pca(X, threshold = 0.8, method = "ED")
+
+end_time_ed = time.time()
+
+duration_time_ed = end_time_ed - start_time_ed
+
+print(f"ED: {Z_ed}")
+print(f"ED running time: {duration_time_ed:.12f} s")
+
+# SVD test
+start_time_svd = time.time()
+
+Z_svd = pca(X, threshold = 0.8, method = "SVD")
+
+end_time_svd = time.time()
+
+duration_time_svd = end_time_svd - start_time_svd
+
+print(f"SVD: {Z_ed}")
+print(f"SVD running time: {duration_time_svd:.12f} s")
+```
+output
+```
+ED: [[ 3.81991318]
+ [-3.48484904]
+ [ 0.38930715]
+ [-2.00373791]
+ [ 1.92783747]
+ [-0.64847085]]
+ED running time: 0.006947994232 s
+SVD: [[ 3.81991318]
+ [-3.48484904]
+ [ 0.38930715]
+ [-2.00373791]
+ [ 1.92783747]
+ [-0.64847085]]
+SVD running time: 0.001019001007 s
+```
