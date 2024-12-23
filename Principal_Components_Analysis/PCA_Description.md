@@ -153,7 +153,7 @@ V = 2×2
    -0.6329   -0.7742
    -0.7742    0.6329
 ```
-$\Sigma$ has 2 eigenvalues, meaning that there are 2 principal components. 
+$\Sigma$ has 2 singular values, meaning that there are 2 principal components. 
 It's not difficult to discover that we should choose $V$.
 
 
