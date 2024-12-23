@@ -68,7 +68,7 @@ Meaning of accumulated contribution rate:
 |:---:|:---:|:---:|:---:|
 |$\alpha_1$|$\alpha_1+\alpha_2$|$\alpha_1+\alpha_2+\alpha_3$|$\cdots$|
 
-Take when $\alpha_1+\alpha_2+\alpha_3>80\%$
+Take when $\alpha_1+\alpha_2+\alpha_3>0.8$
 
 ### Step5: Find Principal Components
 
