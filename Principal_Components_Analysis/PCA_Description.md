@@ -113,7 +113,7 @@ Hence, columns of $U$ are directions in the **sample space**, representing the p
 of $V$ are the directions in the **eigen-space**, which is our desired space. So the principal components are obviously
 included in $V$, instead of $U$.
 
-Let's use a specific example to illustrate it more clear. Consider date matrix
+Let's use a specific example to illustrate it more clear. Consider data matrix
 
 $$
 X = \begin{pmatrix}
